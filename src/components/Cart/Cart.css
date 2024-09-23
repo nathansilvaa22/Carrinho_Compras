@@ -1,0 +1,37 @@
+.cart {
+  width: 100%;
+  max-width: 330px;
+  background-color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 100px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Mudança aqui: use translateX para evitar confusão com o segundo valor de translate */
+  transform: translateX(110%);
+  transition: transform 400ms ease; /* Especificar que a transição se aplica à propriedade transform */
+}
+
+.cart-items {
+  flex-grow: 1;
+  overflow-y: auto; /* Certifique-se de que o scroll esteja apenas no eixo Y */
+}
+
+.cart-resume {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 35px 0 15px;
+  border-top: 1px solid #ddd;
+}
+
+.cart-items .cart-item:last-child {
+  border-bottom: none;
+}
+
+/* Classe que ativa o carrinho */
+.cart--active {
+  transform: translateX(0); /* Corrigido para apenas afetar o eixo X */
+}
